@@ -12,52 +12,59 @@
 Laravel is a web application framework with expressive, elegant syntax , MVC architecture , Blade template and Artisan CLi . Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
 # Learning Laravel 
-
+ [Official Documentation](https://laravel.com/docs/10.x/)
 ## How to Install
 Before creating your first Laravel project, you should ensure that your local machine has PHP and Composer installed. 
-  install Lamp server
-  install composer
-  install laravel globally
-https://laravel.com/docs/10.x/installation
+ - Install Lamp server
+ - Install composer
+ - Install laravel globally
 
-## Create Project
-composer create-project laravel/laravel example-app
+## Create Project -  There are Two ways to create a project 
+    composer create-project laravel/laravel <project name>
+    eg,
+    composer create-project laravel/laravel example-app
+   
             OR
-composer global require laravel/installer
- 
-laravel new example-app    
+
+    
+    composer global require laravel/installer
+    laravel new <project name>  
+    eg, 
+    composer global require laravel/installer
+    laravel new example-app  
 
 ## change directory to project folder
-    Syntax- cd <project name>  
+    cd <project name>  
     eg, 
     cd example-app
+
 ## commands for start:
-php artisan serve
+     php artisan serve
+
 
 ## Laravel Directory Structure
+    app/Console/kernal.php - for hold custom artisan command
+    app/Exceptions/handler.php - for hold custom handler (exception)
+    app/Http/Controllers/ - Base Controller, API controller  , website Controller etc
+    app/Http/Middleware - access guard for routes of the website
+    app/Http/model - models for all database table 
+    app/Http/providers- for external/ third party Service provider files
+    bootstrap- for improve application performence (speed up) using cache
+    config- store all confifuration files for the application (mail , auth , hash)
+    database/migration - for creating new database table using laravel
+    database/factories & seeders - generates fake data for testing purposes
+    public - run the app using the index.php
+    routes - web.php for website routes and api.php for api routes configs 
+    resources- frontend pages , css , js etc
+    storage - location for stores files by users (eg , downloadable file)
+    test/unit- for writing automation (unit) testing test cases
+    vendor- for external packages (eg payment gateway , google login)
+    .env file - for configuartion test and production configuration details
+    composer.json - store all dependencies(packages) information 
+    readme.md - file for documentation 
+    pakage system - for sending mails and import excel and files data
 
-app/console/kernal.php - for custom artisan command
-app/exceptions/handler.php - for custom handler
-app/http/controllers/controllers.php - controller for Api , website etc
-app/http/Middleware - access guard for routes
-app/http/model-  models for every database table 
-app/http/providers- for external/ third party plugins and files
-bootstrap- for improve application performence /speed
-config- store all confifuration files for the application
-database/migration - for creatating new databse table using laravel
-database/factories - generates fake data for testing purposes
-public - run the app 
-routes - web.php for website routes and api.php for api routes configs 
-resources- frontend pages , css , js etc
-storage - location for stores files by the application users
-test/unit- for writing unit testing test cases
-vendor- for external packages
-.env file - for configuartion test and production configuration details
-composer.json - store all dependencies information for automatic updates
-pakage system - for sending mails and import excel and files data
-
-
-## route methods
+## route methods (get,post,put,patch,delete)
 get - for view (hit url)
 post - store data
 
@@ -82,10 +89,9 @@ enter {{name}} and {{id}} for displaying the data
 
 
 ## Resource/view 
-for front end files.Blade is a template engine engine of Laravel. code for return a page (demo.blade.php) in custom route (/alpha) is written bellow-
-
-eg; 
-Route::get('/alpha',function(){
+##### for front end files '.blade' is a template engine engine of Laravel. code for return a page (demo.blade.php) in custom route (/page1) is written bellow.
+    eg; 
+    Route::get('/page1',function(){
     return view('demo');
 
 ## API route in Route/api.php syntax
