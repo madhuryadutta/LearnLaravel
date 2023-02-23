@@ -36,6 +36,9 @@ Route::get('page2/{name}/{id?}',function($name , $id=null){
 //    print_r($data);
     return view('demowithdata')->with($data);
 }); 
+Route::get('/page3',function(){
+    return view('blade');
+});
 
 
 

@@ -65,24 +65,24 @@ Before creating your first Laravel project, you should ensure that your local ma
     pakage system - for sending mails and import excel and files data
 
 ## route methods (get,post,put,patch,delete)
-get - for view (hit url)
-post - store data
+    get - for view (hit url)
+    post - store data
 
 ## route for webpages in Route/web.php Syntax 
-Route::<Method name>('path with respect to root', function(){
-    function code
-});
 
-eg;
-Route::post('/2', function(){
-    echo "Fail";
-});
+    Route::<Method name>('path with respect to root', function(){
+        function code
+    });
+    eg;
+    Route::post('/2', function(){
+        echo "Fail";
+    });
 
 ## Routing of webpage with data
-Route::get('/beta/{name}/{id}',function($name,$id=null){
-      $data = compact('name','id');
-      return view('demo')->with($data);
-});
+    Route::get('/beta/{name}/{id}',function($name,$id=null){
+        $data = compact('name','id');
+        return view('demo')->with($data);
+    });
 
 in demo page;
 enter {{name}} and {{id}} for displaying the data
@@ -95,26 +95,32 @@ enter {{name}} and {{id}} for displaying the data
     return view('demo');
 
 ## API route in Route/api.php syntax
-Route::<Method name>('path with respect to root', function(){
-    function code
-});
-API url-> 127.0.0.1:8000/api/<API name>
+    Route::<Method name>('path with respect to root', function(){
+        function code
+    });
+    API url-> 127.0.0.1:8000/api/<API name>
 
-eg;
-route::get('/get-data',function(){
-    return "Success";
-});
+    eg;
+    route::get('/get-data',function(){
+        return "Success";
+    });
 
 API will be available in this url 127.0.0.1:8000/api/get-data
 
-## {{}} - for echo in blade
+## Blade Template
+##### Blade is a template engine of Laravel . Its file extension is "filename.blade.php"
+    - {{$variable_name}} - for simple echo without html decode in blade 
+    - {{!!$variable_name!!}} - for echo with html decode in blade
+    - {{date(d-m-y)}} - for echo date in blade
+    - @if() @else @elseif - for writing conditional in blade
+    - @isset - check weather the varible set
+    - @unless - unless the the condition is true ,do nothing
+    - @for - for loop
+    - @while - while loop
+    - @php - php syntax
+    - @break -  
+    - @continue - 
 
-## other conditional in laravel blade-  @if() @else @elseif @endif @unless @endunless
-
-## @isset 
-## @for @while
-## @php
-## @break @continue
 
 ## @include
 @include('layouts.header')
@@ -141,24 +147,24 @@ Home Page
 //in the specific page
 
 
+## Controllers in Laravel ( PATH: app/Http/Controllers/)
+This are Class based php files. we can group related request handling logic in controller.
+   
+### Basic controller: location app/htttp
+    php artisan make:controller <cotroller name>
+
+    eg;
+    php artisan make:controller DemoController
+
+### Single Action controller: location app/htttp
+    php artisan make:controller <cotroller name>
+
+    eg;
+    php artisan make:controller SingleActionController --invokeable
 
 
-## Basic controller: location app/htttp
-php artisan make:controller <cotroller name>
-
-eg;
-php artisan make:controller DemoController
-
-## Single Action controller: location app/htttp
-php artisan make:controller <cotroller name>
-
-eg;
-php artisan make:controller SingleActionController --invokeable
-
-
-## resource controller: location app/htttp
-php artisan make:controller PhotoController --resource
-
+### resource controller: location app/htttp
+    php artisan make:controller PhotoController --resource
 
 
 ## migration commands
