@@ -40,6 +40,12 @@ Route::get('/page3',function(){
     return view('blade');
 });
 
+Route::get('/page4',function(){
+    return view('layout');
+});
+Route::get('/page5',function(){
+    return view('about');
+});
 
 
 

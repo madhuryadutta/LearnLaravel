@@ -43,30 +43,30 @@ Before creating your first Laravel project, you should ensure that your local ma
 
 
 ## Laravel Directory Structure
-    app/Console/kernal.php - for hold custom artisan command
-    app/Exceptions/handler.php - for hold custom handler (exception)
-    app/Http/Controllers/ - Base Controller, API controller  , website Controller etc
-    app/Http/Middleware - access guard for routes of the website
-    app/Http/model - models for all database table 
-    app/Http/providers- for external/ third party Service provider files
-    bootstrap- for improve application performence (speed up) using cache
-    config- store all confifuration files for the application (mail , auth , hash)
-    database/migration - for creating new database table using laravel
-    database/factories & seeders - generates fake data for testing purposes
-    public - run the app using the index.php
-    routes - web.php for website routes and api.php for api routes configs 
-    resources- frontend pages , css , js etc
-    storage - location for stores files by users (eg , downloadable file)
-    test/unit- for writing automation (unit) testing test cases
-    vendor- for external packages (eg payment gateway , google login)
-    .env file - for configuartion test and production configuration details
-    composer.json - store all dependencies(packages) information 
-    readme.md - file for documentation 
-    pakage system - for sending mails and import excel and files data
+    app/Console/kernal.php -- for hold custom artisan command
+    app/Exceptions/handler.php -- for hold custom handler (exception)
+    app/Http/Controllers/ -- Base Controller, API controller  , website Controller etc
+    app/Http/Middleware -- access guard for routes of the website
+    app/Http/model -- models for all database table 
+    app/Http/providers -- for external/ third party Service provider files
+    bootstrap -- for improve application performence (speed up) using cache
+    config -- store all confifuration files for the application (mail , auth , hash)
+    database/migration -- for creating new database table using laravel
+    database/factories & seeders -- generates fake data for testing purposes
+    public -- run the app using the index.php
+    routes -- web.php for website routes and api.php for api routes configs 
+    resources -- frontend pages , css , js etc
+    storage -- location for stores files by users (eg , downloadable file)
+    test/unit -- for writing automation (unit) testing test cases
+    vendor -- for external packages (eg payment gateway , google login)
+    .env file -- for configuartion test and production configuration details
+    composer.json -- store all dependencies(packages) information 
+    readme.md -- file for documentation 
+    pakage system -- for sending mails and import excel and files data
 
 ## route methods (get,post,put,patch,delete)
-    get - for view (hit url)
-    post - store data
+    get -- for view (hit url)
+    post -- store data
 
 ## route for webpages in Route/web.php Syntax 
 
@@ -109,42 +109,43 @@ API will be available in this url 127.0.0.1:8000/api/get-data
 
 ## Blade Template
 ##### Blade is a template engine of Laravel . Its file extension is "filename.blade.php"
-    - {{$variable_name}} - for simple echo without html decode in blade 
-    - {{!!$variable_name!!}} - for echo with html decode in blade
-    - {{date(d-m-y)}} - for echo date in blade
-    - @if() @else @elseif - for writing conditional in blade
-    - @isset - check weather the varible set
-    - @unless - unless the the condition is true ,do nothing
-    - @for - for loop
-    - @while - while loop
-    - @php - php syntax
-    - @break -  
-    - @continue - 
+    {{$variable_name}} -- for simple echo without html decode in blade 
+    {{!!$variable_name!!}} -- for echo with html decode in blade
+    {{date(d-m-y)}} -- for echo date in blade
+    @if() @else @elseif -- for writing conditional in blade
+    @isset -- check weather the varible set
+    @unless -- unless the the condition is true ,do nothing
+    @for -- for loop
+    @while -- while loop
+    @php -- syntax for writing raw php 
+    @continue -- for skip the current iteration and run the next  
+    @break --  it will stop the loop
+    {{-- comment --}} -- syntax for write a comment
 
+### Blade Layout Directives
+    @include - for adding/include an another php file 
+    @section -- it defines the section of a content which will be yeild
+    @yeild -- display the content of a given section
+    @extends -- it ineherit/take the layout the parameter file
 
-## @include
-@include('layouts.header')
-@include('layouts.footer')
+    eg, lets create a layouts folder with 3 files (footer,main,header) inside resources/views
 
-## @yeild -- display the content of a given section
-@yield('main-section')
+    main file code:
+            @include('layouts.header')
+            @yield('main-section')
+            @include('layouts.footer')
+    
+    now use extends for including the main layout:
+             @extends('layouts.main')
+    
+    the following datawill be merge with the view of the current page:
+            @section('main-section)
+            <data to be included>
+            @endsection
 
-## create new file in view - @extends inherit the layout of the main.blade.php
-@extends('layouts.main')
-@push('title')
-<title>Test1</title>
-@section('main-section')
-<h1 class="text-center">
-Home Page
-</h1>
-@endsection
-
-
-## @stack - use for specific input in title tag
-    @stack('title') // in header.php
-    @push('title')
-<title>Home</title>
-//in the specific page
+    for dynamic title tages we can use @stack in header and @push in the current webpage
+            @stack('title')  --  [in header.blade.php]
+            @push('title') <title> add the title here </title> @endpush  --  [we can also add meta tags] 
 
 
 ## Controllers in Laravel ( PATH: app/Http/Controllers/)

@@ -10,7 +10,7 @@
 
 <body>
     <h1>This is my 3rd page in Laravel</h1>
-
+    {{-- This is a comment and it will not excute by the server  --}}
     <div>
         <h2>Date and Time</h2>
         Date: {{date('d-m-y')}}
@@ -292,10 +292,11 @@
         "Åland Islands"];
         // $arr = [1,2,3,4,5,6,7,8,9];
        
+        // display the countries array_data 
+      
         // echo '<pre>';
         // print_r($countries);
-       
-        @endphp
+         @endphp
         {{-- @foreach ($arr as $i)
         <h4> {{$i}} </h4> --}}
        <select>
@@ -304,6 +305,18 @@
         <option value="{{$key}}">{{$country}}</option>
         @endforeach
     </select>
+    </div>
+
+    <div>
+        <h1>Break and continue</h1>
+        @for ($i=1;$i<10;$i++)
+        @if($i==5)
+           @continue
+        @elseif($i==8)
+           @break
+        @endif
+            {{$i}}
+        @endfor
     </div>
 
 </body>
