@@ -58,6 +58,8 @@ Route::get('/page7',[DemoController::class,'about']);
 Route::get('/page8',SingleActionController::class);
 Route::resource('/photo',PhotoController::class);
 Route::get('/register',[RegistrationController::class,'index']);
+Route::get('/component',[RegistrationController::class,'formusingcomponents']);
+
 Route::post('/register',[RegistrationController::class,'register']);
 
 // More routing Methods

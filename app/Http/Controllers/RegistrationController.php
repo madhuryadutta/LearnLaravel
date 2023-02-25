@@ -10,6 +10,9 @@ class RegistrationController extends Controller
         return view ('form');
         
     }
+    public function formusingcomponents(){
+        return view ('formusingcomponents');
+    }
 
     // For Future use
     // public function regsiter(){

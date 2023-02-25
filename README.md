@@ -171,6 +171,13 @@ This are Class based php files.It works as a interpreter between view and model.
 ### resource controller: (predefine CRUD operation functions are included which can't be renamed )
     php artisan make:controller PhotoController --resource
 
+## Components In laravel (Paths: app/View/Components & resources/views/components)
+    syntax -- php artisan make:component <Component_name>
+    php artisan make:component Input
+
+    use  <x-input/> tag for render the component in the view pages
+
+
 
 ## migration commands
 php artisan make:migration create_table_name_table
