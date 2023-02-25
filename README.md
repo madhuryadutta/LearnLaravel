@@ -179,20 +179,27 @@ This are Class based php files.It works as a interpreter between view and model.
 
 
 
-## migration commands
-php artisan make:migration create_table_name_table
-php artisan migrate
-php artisan migrate --force
-php artisan migrate:rollback
-php artisan migrate:refresh
+## Migration commands
+    php artisan config:cache (for first time env file setup)
 
-## add attributes to a table
-php artisan make:migration add_columns_to_customers_table
+    php artisan migrate (for first time migration to create default tables)
+
+    php artisan make:migration create_table_name_table (for creating new table)
+
+    php artisan migrate --force
+
+    php artisan migrate:rollback (for undo the last migration)
+    
+    php artisan migrate:refresh (for fresh run all migration)
 
 
-## model creation
+### add attributes (new columns) to a table
+    syntax  --  php artisan make:migration add_columns_to_<tablename>_table
+    php artisan make:migration add_columns_to_customers_table
+
+<!-- ## model creation
 php artisan make:model <model_name>
 
-php artisan make:model <model_name> --migration
+php artisan make:model <model_name> --migration -->
 
 
