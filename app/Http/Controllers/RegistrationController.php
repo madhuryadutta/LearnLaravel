@@ -17,6 +17,14 @@ class RegistrationController extends Controller
     // }
 
     public function register(Request $request){
+        $request->validate(
+            [
+                'u_name' => 'required',
+                'u_email' => 'required|email',
+                'u_password' => 'required',
+                'confirm_password' => 'required|same:u_password'
+            ]
+        );
         echo '<pre>';
         print_r($request->all());
     }

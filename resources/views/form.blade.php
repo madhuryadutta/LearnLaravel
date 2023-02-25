@@ -17,21 +17,47 @@
             Registration Form </h1>
             <form action="{{url('/register')}}" method="POST">
                 @csrf
+                
         <div class="form-group">
             <label for="">Name</label>
-            <input type="text" name="u_name" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            <input type="text" name="u_name" id="" class="form-control" value="{{old('u_name')}}" placeholder="" aria-describedby="helpId">
+            <span class="text-danger">
+                @error('u_name')
+                    {{$message}}
+                @enderror
+            </span>
             {{-- <small id="helpId" class="text-muted">Help text</small> --}}
         </div>
 
         <div class="form-group">
             <label for="">Email</label>
-            <input type="email" name="u_email" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            <input type="email" name="u_email" id="" class="form-control" value="{{old('u_email')}}"placeholder="" aria-describedby="helpId">
+            <span class="text-danger">
+                @error('u_email')
+                    {{$message}}
+                @enderror
+            </span>
             {{-- <small id="helpId" class="text-muted">Help text</small> --}}
         </div>
 
         <div class="form-group">
             <label for="">Password</label>
             <input type="password" name="u_password" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            <span class="text-danger">
+                @error('u_password')
+                    {{$message}}
+                @enderror
+            </span>
+            {{-- <small id="helpId" class="text-muted">Help text</small> --}}
+        </div>
+        <div class="form-group">
+            <label for="">Confirm Password</label>
+            <input type="password" name="confirm_password" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            <span class="text-danger">
+                @error('confirm_password')
+                    {{$message}}
+                @enderror
+            </span>
             {{-- <small id="helpId" class="text-muted">Help text</small> --}}
         </div>
         <button class="btn btn-primary"> Submit</button>
