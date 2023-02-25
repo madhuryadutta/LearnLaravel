@@ -64,11 +64,13 @@ Before creating your first Laravel project, you should ensure that your local ma
     readme.md -- file for documentation 
     pakage system -- for sending mails and import excel and files data
 
-## route methods (get,post,put,patch,delete)
+## Route in Laravel
+### route methods (get,post,put,patch,delete)
     get -- for view (hit url)
     post -- store data
+    resource -- This method is for the routes of resource controller predefine functions
 
-## route for webpages in Route/web.php Syntax 
+### Route for webpages in Route/web.php Syntax 
 
     Route::<Method name>('path with respect to root', function(){
         function code
@@ -78,15 +80,17 @@ Before creating your first Laravel project, you should ensure that your local ma
         echo "Fail";
     });
 
-## Routing of webpage with data
+### Routing of webpage with data
     Route::get('/beta/{name}/{id}',function($name,$id=null){
         $data = compact('name','id');
         return view('demo')->with($data);
     });
 
-in demo page;
-enter {{name}} and {{id}} for displaying the data
-
+    in demo page;
+    enter {{name}} and {{id}} for displaying the data
+### Routing for Controllers  : use 'resource' as method for the resource controllers
+    Syntax -- Route::<Method name>('path with respect to root', [<ControllerName>::class,'<classname>']);
+    Route::get('/page7',[DemoController::class,'about']);
 
 ## Resource/view 
 ##### for front end files '.blade' is a template engine engine of Laravel. code for return a page (demo.blade.php) in custom route (/page1) is written bellow.
@@ -149,22 +153,22 @@ API will be available in this url 127.0.0.1:8000/api/get-data
 
 
 ## Controllers in Laravel ( PATH: app/Http/Controllers/)
-This are Class based php files. we can group related request handling logic in controller.
+This are Class based php files.It works as a interpreter between view and model.  we can group related request handling logic in controllers.
    
-### Basic controller: location app/htttp
+### Basic controller: (a default single class included)
     php artisan make:controller <cotroller name>
 
     eg;
     php artisan make:controller DemoController
 
-### Single Action controller: location app/htttp
+### Single Action controller: (for handling single request)
     php artisan make:controller <cotroller name>
 
     eg;
-    php artisan make:controller SingleActionController --invokeable
+    php artisan make:controller SingleActionController --invokable
 
 
-### resource controller: location app/htttp
+### resource controller: (predefine CRUD operation functions are included which can't be renamed )
     php artisan make:controller PhotoController --resource
 
 

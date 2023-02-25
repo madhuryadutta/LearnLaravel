@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DemoController;
+use App\Http\Controllers\SingleActionController;
+use App\Http\Controllers\PhotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +50,12 @@ Route::get('/page5',function(){
     return view('about');
 });
 
+// Routes for Controller classes
 
+Route::get('/page6',[DemoController::class,'index']);
+Route::get('/page7',[DemoController::class,'about']);
+Route::get('/page8',SingleActionController::class);
+Route::resource('/photo',PhotoController::class);
 
 // More routing Methods
 
