@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\RegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,8 @@ Route::get('/page6',[DemoController::class,'index']);
 Route::get('/page7',[DemoController::class,'about']);
 Route::get('/page8',SingleActionController::class);
 Route::resource('/photo',PhotoController::class);
+Route::get('/register',[RegistrationController::class,'index']);
+Route::post('/register',[RegistrationController::class,'register']);
 
 // More routing Methods
 
