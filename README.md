@@ -197,9 +197,15 @@ This are Class based php files.It works as a interpreter between view and model.
     syntax  --  php artisan make:migration add_columns_to_<tablename>_table
     php artisan make:migration add_columns_to_customers_table
 
-<!-- ## model creation
-php artisan make:model <model_name>
+## Model in Laravel ( PATH: app/Models/)
+This are Class based php files. Laravel include Eloquent ,an ORM to interact with database.Each table has a coresponding table to interact with the table
 
-php artisan make:model <model_name> --migration -->
+### Model creation Commands
+    syntax  --  php artisan make:model <model_name singular form>
+    eg,
+    php artisan make:model <model_name> --migration
 
+    syntax -- php artisan make:model <model_name in singular form> --migration
+    eg,
+    php artisan make:model Product --migration
 
