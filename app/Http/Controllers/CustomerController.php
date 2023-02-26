@@ -28,5 +28,15 @@ class CustomerController extends Controller
         $customer->customer_dob = $request['customer_dob'];
         $customer->customer_password = md5($request['customer_password']) ;
         $customer->save();
+        return redirect('/customer/view');
+    }
+    public function view(){
+        $customers = customer::all();
+        // echo "<pre>";
+        // print_r($customers);
+        // print_r($customers->toArray());
+        // die;
+        $data = compact('customers');
+        return view('view_customer')->with($data);
     }
 }
