@@ -5,7 +5,9 @@ use App\Http\Controllers\DemoController;
 use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\CustomerController;
 use App\Models\Customer;
+use Illuminate\Routing\RouteRegistrar;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,11 +67,15 @@ Route::post('/register',[RegistrationController::class,'register']);
 
 // More routing Methods
 
-Route::get('/customer',function(){
-    $customers = Customer::all();
-    echo "<pre>";
-    print_r($customers->toarray());
-});
+// Route::get('/customer',function(){
+//     $customers = Customer::all();
+//     echo "<pre>";
+//     print_r($customers->toarray());
+// });
+Route::get('/customer',[CustomerController::class,'index']);
+Route::post('/customer',[CustomerController::class,'store']);
+
+
 
 // Route::put('/put',function(){
 //     echo "Testing the put Route";
