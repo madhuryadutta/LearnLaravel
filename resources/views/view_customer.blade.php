@@ -52,7 +52,9 @@
                     <td>{{$customer->customer_address}}</td>
                     <td>{{$customer->customer_city}}</td>
                     <td>{{$customer->customer_state}}</td>
-                    <td>{{$customer->customer_dob}}</td>
+                    {{-- <td>{{$customer->customer_dob}}</td> --}}
+                    {{-- optional format using user define function in helper.php file  --}}
+                    <td>{{get_formated_date($customer->customer_dob,'d-M-Y')}}</td>
                     <td>@if ($customer->martial_status ==1)
                         <a href="">
                             <span class="badge badge-danger">Unmarried</span>

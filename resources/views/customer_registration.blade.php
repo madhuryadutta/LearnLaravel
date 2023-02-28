@@ -34,7 +34,7 @@
 @endpush
 @section('main-section')
 <h1 class="text-center">
-   Update Customer Data </h1>
+   Register Customer</h1>
 <form action="{{route('customer.create')}}" method="POST">
     @csrf
 <div class="container">

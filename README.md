@@ -209,3 +209,8 @@ This are Class based php files. Laravel include Eloquent ,an ORM to interact wit
     eg,
     php artisan make:model Product --migration
 
+## Custom Helper: for minimize task
+    create "helper.php" inside "app" folder 
+    create functions which are cooomnonly use in development or production , so that you can call them anytime 
+    add "files": ["app/helper.php"] to "composer.json"
+    composer dump-autoload

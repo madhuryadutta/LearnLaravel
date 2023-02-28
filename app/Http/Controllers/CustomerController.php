@@ -17,7 +17,9 @@ class CustomerController extends Controller
     public function store(Request $request){
         // echo "<pre>";
         // print_r($request->all());
-
+        // or use custom helper
+        // m($request->all());
+        // die;
         $customer = new Customer;
         $customer->customer_name =$request['customer_name'] ;
         $customer->customer_email = $request['customer_email'];
@@ -52,6 +54,8 @@ class CustomerController extends Controller
     }
 
     public function update($id , Request $request){
+        // m($request->all());
+        // die;
         $customer = Customer::find($id);
         $customer->customer_name =$request['customer_name'] ;
         $customer->customer_email = $request['customer_email'];
