@@ -232,3 +232,9 @@ This are Class based php files. Laravel include Eloquent ,an ORM to interact wit
      public function getCustomerDobAttribute($value){
         return date("d-M-Y",strtotime($value));
     }
+
+## Seeder & Faker in Laravel
+    php artisan make:seeder CustomerSeeder
+    configure the "CustomerSeeder" file with rules 
+    php artisan db:seed 
+    use for loop for large number of entries
