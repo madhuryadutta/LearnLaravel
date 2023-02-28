@@ -73,9 +73,9 @@ Route::post('/register',[RegistrationController::class,'register']);
 //     print_r($customers->toarray());
 // });
 Route::get('/customer',[CustomerController::class,'index'])->name('customer.create');
-Route::get('/customer/view',[CustomerController::class,'view']);
+Route::get('/customer/view',[CustomerController::class,'view'])->name('customer.view');;
 Route::post('/customer',[CustomerController::class,'store']);
-
+Route::get('/customer/delete/{id}',[CustomerController::class,'destroy'])->name('customer.delete');
 
 
 // Route::put('/put',function(){

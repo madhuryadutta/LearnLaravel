@@ -65,7 +65,11 @@
                     @endif</td>
                     <td>{{$customer->points}}</td>
                 <td>
-                   <button class="btn btn-danger" href="#">Delete</button>
+                    {{-- <a href="{{url('customer/delete')}}/{{$customer->customer_id}}"> </a> --}}
+                        <a href="{{route('customer.delete',['id' =>$customer->customer_id])}}">
+                        <button class="btn btn-danger">Delete</button>
+                    </a>
+                   
                 </td>
                 </tr>
                 @endforeach
