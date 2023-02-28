@@ -1,3 +1,4 @@
+@include('layouts.header');
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,8 +11,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-      
+     
     <div class="container">
+      <a href="{{route('customer.create')}}">  <button class="btn btn-primary btn-lg float-right"
+        type="submit"> Add
+  </button></a>
         <table class="table">
             <thead>
                 <tr>
@@ -25,6 +29,7 @@
                     <th>customer_dob</th>
                     <th>martial_status</th>
                     <th>points</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,11 +54,19 @@
                     <th>{{$customer->customer_state}}</td>
                     <td>{{$customer->customer_dob}}</td>
                     <td>@if ($customer->martial_status ==1)
-                        Unmarried
+                        <a href="">
+                            <span class="badge badge-danger">Unmarried</span>
+                        </a>
+                    
                         @else
-                        Married
+                        <a href="">
+                            <span class="badge badge-success">Married</span>
+                        </a>
                     @endif</td>
                     <td>{{$customer->points}}</td>
+                <td>
+                   <button class="btn btn-danger" href="#">Delete</button>
+                </td>
                 </tr>
                 @endforeach
             </tbody>

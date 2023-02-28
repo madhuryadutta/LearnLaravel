@@ -1,4 +1,38 @@
-<!DOCTYPE html>
+@extends('layouts.main')
+@push('title')
+    <title>Index</title>
+@endpush
+@section('main-section')
+<h1>
+    Index Page
+</h1>
+    
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -129,4 +163,4 @@
             </div>
         </div>
     </body>
-</html>
+</html> --}}

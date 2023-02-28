@@ -72,7 +72,7 @@ Route::post('/register',[RegistrationController::class,'register']);
 //     echo "<pre>";
 //     print_r($customers->toarray());
 // });
-Route::get('/customer',[CustomerController::class,'index']);
+Route::get('/customer',[CustomerController::class,'index'])->name('customer.create');
 Route::get('/customer/view',[CustomerController::class,'view']);
 Route::post('/customer',[CustomerController::class,'store']);
 

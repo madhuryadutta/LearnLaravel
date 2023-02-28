@@ -3,7 +3,10 @@
 <head>
 @stack('title')
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <style>
 * {
   box-sizing: border-box;
@@ -66,10 +69,11 @@ footer {
 </head>
 <body>
     <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li style="float:right"><a href="#about">About</a></li>
+        <li><a class="active" href="{{url('/')}}">Home</a></li>
+        <li><a href="{{url('/page5')}}">About</a></li>
+        <li><a href="{{url('/customer/view')}}">View Customer</a></li>
+        <li><a href="{{url('/customer')}}">Register Customer</a></li>
+        {{-- <li style="float:right"><a href="{{url('/customer')}}">Register Customer</a></li> --}}
       </ul>
 
 
