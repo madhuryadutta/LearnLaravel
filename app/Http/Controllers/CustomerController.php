@@ -43,6 +43,24 @@ class CustomerController extends Controller
     //    echo $id;
        $customer = Customer::where('customer_id',$id)->delete();
        return redirect ('customer/view');
+    }
 
+    public function edit($id){
+        $customer = Customer::find($id);
+       $data = compact('customer');
+       return view ('update_customer')->with($data);
+    }
+
+    public function update($id , Request $request){
+        $customer = Customer::find($id);
+        $customer->customer_name =$request['customer_name'] ;
+        $customer->customer_email = $request['customer_email'];
+        $customer->customer_gender = $request['customer_gender'];
+        $customer->customer_address = $request['customer_address'];
+        $customer->customer_city = $request['customer_city'];
+        $customer->customer_state = $request['customer_city'];
+        $customer->customer_dob = $request['customer_dob'];
+        $customer->save();
+        return redirect('/customer/view');
     }
 }

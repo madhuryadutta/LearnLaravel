@@ -9,7 +9,7 @@
     @csrf
 <div class="container">
     
-     <x-input type="text" name="customer_name" label="please Enter your name"/>
+     <x-input type="text" name="customer_name" label="please Enter your name" value="">
      <x-input type="email" name="customer_email" label="please Enter your Email"/> 
      Gender  :    Male<input type="radio" name="customer_gender" label="M" value="M">Female <input type="radio" name="customer_gender" label="F" value="F"> Other<input type="radio" name="customer_gender" label="O" value="O">  
      <x-input type="text" name="customer_address" label="please Enter your Address"/> 

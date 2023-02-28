@@ -37,7 +37,7 @@
                     
                 
                 <tr>
-                    <td scope="row">{{$customer->customer_id}}</td>
+                    <th scope="row">{{$customer->customer_id}}</td>
                     <td>{{$customer->customer_name}}</td>
                     <td>{{$customer->customer_email}}</td>
                     <td>
@@ -51,7 +51,7 @@
                     </td>
                     <td>{{$customer->customer_address}}</td>
                     <td>{{$customer->customer_city}}</td>
-                    <th>{{$customer->customer_state}}</td>
+                    <td>{{$customer->customer_state}}</td>
                     <td>{{$customer->customer_dob}}</td>
                     <td>@if ($customer->martial_status ==1)
                         <a href="">
@@ -68,6 +68,9 @@
                     {{-- <a href="{{url('customer/delete')}}/{{$customer->customer_id}}"> </a> --}}
                         <a href="{{route('customer.delete',['id' =>$customer->customer_id])}}">
                         <button class="btn btn-danger">Delete</button>
+                    </a>
+                    <a href="{{route('customer.edit',['id' =>$customer->customer_id])}}">
+                        <button class="btn btn-primary">Update</button>
                     </a>
                    
                 </td>

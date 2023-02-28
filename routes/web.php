@@ -76,6 +76,9 @@ Route::get('/customer',[CustomerController::class,'index'])->name('customer.crea
 Route::get('/customer/view',[CustomerController::class,'view'])->name('customer.view');;
 Route::post('/customer',[CustomerController::class,'store']);
 Route::get('/customer/delete/{id}',[CustomerController::class,'destroy'])->name('customer.delete');
+Route::get('/customer/edit/{id}',[CustomerController::class,'edit'])->name('customer.edit');
+Route::post('/customer/update/{id}',[CustomerController::class,'update'])->name('customer.update');
+
 
 
 // Route::put('/put',function(){
