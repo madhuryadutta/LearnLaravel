@@ -214,3 +214,21 @@ This are Class based php files. Laravel include Eloquent ,an ORM to interact wit
     create functions which are cooomnonly use in development or production , so that you can call them anytime 
     add "files": ["app/helper.php"] to "composer.json"
     composer dump-autoload
+
+## Accessor & Mutator : for modify data which are going to /from the database
+### Mutator Syntax   
+    public function Set<field_name(in camelcase)>Attribute($value)
+    {
+        $this->attributes['<field_name(same as on the database )>']=ucwords($value);
+    }
+
+####    eg, following function convert the cutomer_name filed from the customers table, as first character of each word to uppercase:
+
+    public function setCustomerNameAttribute($value)
+    {
+    $this->attributes['customer_name'] = ucwords($value);
+    }
+### Accessor syntax/example
+     public function getCustomerDobAttribute($value){
+        return date("d-M-Y",strtotime($value));
+    }
