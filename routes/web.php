@@ -6,6 +6,7 @@ use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\NLTKController;
 use App\Models\Customer;
 use Illuminate\Routing\RouteRegistrar;
 
@@ -94,4 +95,4 @@ Route::post('/customer/update/{id}',[CustomerController::class,'update'])->name(
 // More routing Methods
 
 
-
+Route::get('/nltk',[NLTKController::class,'index']);
